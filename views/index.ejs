@@ -4,14 +4,22 @@
 
 <% if (title == "Home") { %>
     <%- include templates/home.ejs %>
+  <% } else if (title == "About me") { %>
+      <%- include templates/about.ejs %>
+    <% } else if (title == "Projects") { %>
+      <%- include templates/projects.ejs %>
+        <% } else if (title == "Services") { %>
+         <%- include templates/services.ejs %>
+          <% } else if (title == "Contact me") { %>
+            <%- include templates/contact.ejs %>
+
 <% } else { %>
   <!-- Main Content -->
 <main clas="container">
   <div class="jumbotron">        
       <h1 class="display-4">Welcome to the <%= title %> page</h1>      
   </div>
-</main>
-  
+</main>  
 <% } %>        
    
 

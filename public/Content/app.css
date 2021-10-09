@@ -5,5 +5,73 @@
 
 a {
   color: #00B7FF;
+  rgba(112,112,112,0.2)
 }*/
 /*Custom CSS goes here */
+
+@import url('https://fonts.googleapis.com/css2?family=Lusitana&display=swap');
+
+body {
+  
+  background-color: #F9F6D6;
+}
+
+.footbar {
+  margin: 0 0;
+  padding: 0;
+  background-color: #ece9c9!important;
+  color:#707070!important;
+}
+
+.card-image {
+  margin: auto;
+}
+
+.space {
+  margin: auto;
+  width: 70%;
+}
+
+.space2 {
+  margin: 10% auto;
+  width: 70%;
+}
+
+.carrusel-card{
+  background-color: rgba(0, 0, 0, 0.65);
+}
+
+.main-button{
+  background-color: #5cdae8;
+  color: #707070;
+  font-weight: bold;
+  font-family: 'Lusitana', serif;
+  border-color: transparent  rgba(112,112,112,0.6) rgba(112,112,112,0.6) transparent;
+  border-width: 3px;  
+}
+
+.main-button:hover {
+  color: white;
+  background-color: #50b6c2;
+  border-color: transparent;
+}
+
+.b-color {
+  color: #0DB2E8!important;
+}
+
+.l-text {
+  color: white!important;
+}
+
+.g-color {
+  color: #707070!important;
+}
+
+.back-color {
+  background-color: #5cdae8!important;
+}
+
+.bloqueo{
+  display:block;
+}
