@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 
-var app = require('./app');
+var app = require('./server/config/app');
 var debug = require('debug')('w04:server');
 var http = require('http');
 
