@@ -1,0 +1,62 @@
+<%- include ../partials/header.ejs %>
+
+<%- include ../partials/main_nav.ejs %>
+
+
+<!-- Main Content -->
+<% if (typeof displayName == 'string' && displayName) { %>
+<main class="container space2">
+<div class="row">
+    <div class="offset-md-1 col-md-10">
+        <h1 class="display-5 b-color">Business <%= title %> List</h1>
+
+        
+        <a href="/contact-list/add" class="btn btn-primary main-button " role="button">
+        <i class="fas fa-plus-circle"></i>Add a Bussiness Contact</a>        
+        <br>
+        <table class="table table-bordered table-striped table-hover">
+            <!-- Header Row-->
+            <tr>
+                <th class="text-center col-3">Name</th>
+                <th class="text-center col-2">Number</th>
+                <th class="text-center col-3">E-mail</th>
+                <th class="text-center col-2"></th>
+                <th class="text-center col-2"></th>                
+            </tr>
+
+            
+            <!-- <% ContactList.sort(function(a, b){return a.number - b.number}); %> -->
+            
+            <% ContactList.sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0)); %>
+
+            <!-- Repeatable Template Row -->
+            <% for(let count = 0; count < ContactList.length; count++) { %>
+                <tr>
+                    <td class="text-center col-3"><%= ContactList[count].name %></td>
+                    <td class="text-center col-2"><%= ContactList[count].number %></td>
+                    <td class="text-center col-3"><%= ContactList[count].email %></td>              
+                    <td class="text-center col-2">
+                        <a href="/contact-list/edit/<%= ContactList[count]._id %>" class="btn btn-primary main-button btn-sm">
+                        <i class="fa fa-pencil-alt"></i>Update</a>
+                    </td>
+                    <td class="text-center col-2">
+                        <a href="/contact-list/delete/<%= ContactList[count]._id %>" class="btn btn-danger other-button btn-sm">
+                            <i class="fa fa-trash-alt"></i>Delete</a>
+                    </td>
+                   
+                </tr>
+            <% } %>
+        </table>
+    </div>
+</div>
+</main>
+<% } else { %>
+    <main class="container">
+        <h1>To enter the page you are trying to access, you need to login or create a user.</h1>
+    </main>
+    
+<% } %>
+
+<%- include ../partials/bottom_nav.ejs %>
+
+<%- include ../partials/footer.ejs %>
